@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Benzene Predictor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <img src="{{ url_for('static', filename='APLogo.jpg') }}" alt="Pollution Free Logo" class="logo">
+
+        <!-- Title + Subtitle -->
+        <h2 class="title">POLLUTION FREE</h2>
+        <h3 class="subtitle">Benzene Concentration Predictor</h3>
+        <p class="description">
+            Enter environmental parameters to estimate benzene levels<br>
+            and receive health guidance.
+        </p>
+
+        <!-- Form -->
+       <form action="/predict" method="post">
+    <input type="text" name="PT08_S1_CO" placeholder="PT08.S1(CO)" required>
+    <input type="text" name="PT08_S2_NMHC" placeholder="PT08.S2(NMHC)" required>
+    <input type="text" name="PT08_S3_NOx" placeholder="PT08.S3(NOx)" required>
+    <input type="text" name="PT08_S4_NO2" placeholder="PT08.S4(NO2)" required>
+    <input type="text" name="PT08_S5_O3" placeholder="PT08.S5(O3)" required>
+    <input type="text" name="NOx_GT" placeholder="NOx(GT)" required>
+    <input type="text" name="NO2_GT" placeholder="NO2(GT)" required>
+    <input type="text" name="T" placeholder="Temperature" required>
+    <button type="submit">Predict</button>
+</form>
+<div style="text-align: center; margin-bottom: 10px;">
+</div>
+</body>
+</html>
